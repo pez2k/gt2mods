@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","BoostGaugeLimit","LowRPMBoost","HighRPMBoost","SpoolRate","Unknown1","Unknown2","Unknown3","RPMIncrease","RedlineIncrease","HighRPMPowerMultiplier","LowRPMPowerMultiplier"
+"bvcon","12500","2","5","5","60","120","0","0","0","0","0","64","100"

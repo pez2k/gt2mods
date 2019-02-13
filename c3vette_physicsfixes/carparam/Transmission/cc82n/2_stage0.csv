@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","Unknown","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
+"cc82n","0","0","4","2294","3059","1625","1000","696","65535","65535","65535","2866","2866","2866","0","255","255","255"

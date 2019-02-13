@@ -1,0 +1,5 @@
+"0E81A458","Viper GTS","34","120,128,144","Bright Silver Metallic / Blue Stripes"
+"0E81A458","Viper GTS","36","56,56,64","Viper Black / Silver Stripes"
+"0E81A458","Viper GTS","62","144,40,56","Viper Red / Silver Stripes"
+"0E81A458","Viper GTS","63","144,40,56","Viper Red"
+"0E81A458","Viper GTS","71","48,72,128","Viper GTS Blue / White Stripes"

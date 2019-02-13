@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","Unknown","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
+"czr1n","0","0","6","2900","2660","1780","1300","1000","740","500","65535","3330","3330","3330","0","255","255","255"

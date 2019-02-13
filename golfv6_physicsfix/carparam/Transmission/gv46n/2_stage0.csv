@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","Unknown","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
+"gv46n","0","0","6","2828","3357","2087","1469","1098","856","716","65535","4235","4235","4235","0","255","255","255"

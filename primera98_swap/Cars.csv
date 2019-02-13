@@ -1,0 +1,5 @@
+﻿"CarName","JPName","USName","EUName","BlockedInJapan","BlockedInUSA","BlockedInPALFIGS","BlockedInPALEnglish"
+"n2p2n","NISSAN PRIMERA 2.0Te-V","Nissan Infiniti G20 '98","Nissan Primera '98","False","False","False","False"
+"n2p2r","[R]NISSAN PRIMERA 2.0Te-V","[R]Nissan Infiniti G20 '98","[R]Nissan Primera '98","False","False","False","False"
+"nep2n","NISSAN PRIMERA 2.0Te-V","Nissan Infiniti G20 '98","Nissan Primera '98","True","True","True","True"
+"nep2r","[R]NISSAN PRIMERA 2.0Te-V","[R]Nissan Infiniti G20 '98","[R]Nissan Primera '98","True","True","True","True"

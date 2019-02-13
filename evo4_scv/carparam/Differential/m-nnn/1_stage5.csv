@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","Unknown","Unknown2","Unknown3","FrontUnknown","DefaultInitialFront","MinInitialFront","MaxInitialFront","DefaultAccelFront","MinAccelFront","MaxAccelFront","DefaultDecelFront","MinDecelFront","MaxDecelFront","RearUnknown","DefaultInitialRear","MinInitialRear","MaxInitialRear","DefaultAccelRear","MinAccelRear","MaxAccelRear","DefaultDecelRear","MinDecelRear","MaxDecelRear"
+"m-nnn","8000","5","0","0","0","104","3","3","3","18","18","18","8","8","8","121","30","30","130","0","0","0","0","0","0"

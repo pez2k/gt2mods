@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","BoostGaugeLimit","LowRPMBoost","HighRPMBoost","SpoolRate","Unknown1","Unknown2","Unknown3","RPMIncrease","RedlineIncrease","HighRPMPowerMultiplier","LowRPMPowerMultiplier"
+"dcsen","40000","3","10","10","40","100","0","0","0","0","0","115","100"

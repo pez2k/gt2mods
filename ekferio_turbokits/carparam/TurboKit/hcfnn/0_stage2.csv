@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","BoostGaugeLimit","LowRPMBoost","HighRPMBoost","SpoolRate","Unknown1","Unknown2","Unknown3","RPMIncrease","RedlineIncrease","HighRPMPowerMultiplier","LowRPMPowerMultiplier"
+"hcfnn","13500","2","5","5","78","120","0","0","0","0","0","50","100"
