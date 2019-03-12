@@ -1,2 +1,2 @@
-﻿"CarId","Unknown","Unknown2","FrontGrip","RearGrip","Length","Height","LongitudinalWeightTransfer","Weight","RMWeightMultiplier","Unknown6","Unknown7","Unknown8"
+﻿"CarId","CentreOfMassLongitudinal","Unknown2","FrontGrip","RearGrip","Length","Height","CentreOfMassHeight","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
 "hcfon","60","0","97","100","4395","1375","2620","1090","40","90","32","56"

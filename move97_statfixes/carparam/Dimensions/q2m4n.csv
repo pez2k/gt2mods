@@ -1,2 +1,2 @@
-﻿"CarId","Unknown","Unknown2","FrontGrip","RearGrip","Length","Height","LongitudinalWeightTransfer","Weight","RMWeightMultiplier","Unknown6","Unknown7","Unknown8"
+﻿"CarId","CentreOfMassLongitudinal","Unknown2","FrontGrip","RearGrip","Length","Height","CentreOfMassHeight","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
 "q2m4n","60","0","100","100","3295","1695","2300","760","28","90","22","56"
