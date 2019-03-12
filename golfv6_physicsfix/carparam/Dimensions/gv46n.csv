@@ -1,2 +1,2 @@
-﻿"CarId","Unknown","Unknown2","FrontGrip","RearGrip","Length","Height","LongitudinalWeightTransfer","Weight","RMWeightMultiplier","Unknown6","Unknown7","Unknown8"
+﻿"CarId","CentreOfMassLongitudinal","Unknown2","FrontGrip","RearGrip","Length","Height","CentreOfMassHeight","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
 "gv46n","60","0","97","100","4149","1439","2511","1401","50","90","40","56"

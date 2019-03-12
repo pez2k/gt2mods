@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TyreCompound","Unknown1","Unknown2","Unknown3"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TyreCompound","Unknown1","SlipMultiplier","GripMultiplier"
 "n2d3r","Stock","0","160","0","MediumRear","0","0","0"
