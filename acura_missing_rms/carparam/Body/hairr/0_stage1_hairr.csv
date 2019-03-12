@@ -1,2 +1,2 @@
-﻿"CarId","Price","BodyId","Weight","BodyRollAmount","Stage","Unknown2","FrontDownforceMinimum","FrontDownforceMaximum","FrontDownforceDefault","RearDownforceMinimum","RearDownforceMaximum","RearDownforceDefault","Unknown3","Unknown4","Unknown5","Unknown6","Width"
+﻿"CarId","Price","BodyId","Weight","BodyRollAmount","Stage","Drag","FrontDownforceMinimum","FrontDownforceMaximum","FrontDownforceDefault","RearDownforceMinimum","RearDownforceMaximum","RearDownforceDefault","Unknown3","Unknown4","Unknown5","Unknown6","Width"
 "hairn","82000","hairr","97","99","1","30","12","47","30","21","76","49","195","5","190","5","1710"
