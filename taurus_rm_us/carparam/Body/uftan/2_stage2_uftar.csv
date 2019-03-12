@@ -1,2 +1,2 @@
-﻿"CarId","Price","BodyId","Weight","BodyRollAmount","Stage","Unknown2","FrontDownforceMinimum","FrontDownforceMaximum","FrontDownforceDefault","RearDownforceMinimum","RearDownforceMaximum","RearDownforceDefault","Unknown3","Unknown4","Unknown5","Unknown6","Width"
+﻿"CarId","Price","BodyId","Weight","BodyRollAmount","Stage","Drag","FrontDownforceMinimum","FrontDownforceMaximum","FrontDownforceDefault","RearDownforceMinimum","RearDownforceMaximum","RearDownforceDefault","Unknown3","Unknown4","Unknown5","Unknown6","Width"
 "uftan","82000","uftar","96","98","2","35","12","42","27","21","70","46","29","6","24","6","1854"
