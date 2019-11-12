@@ -1,3 +1,0 @@
-"0E81A718","Viper RT/10","36","16,16,16","Viper Black"
-"0E81A718","Viper RT/10","62","144,0,24","Viper Red"
-"0E81A718","Viper RT/10","71","48,72,128","Viper GTS Blue / White Stripes"
