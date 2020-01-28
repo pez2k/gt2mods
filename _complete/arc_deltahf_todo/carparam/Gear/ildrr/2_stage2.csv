@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
+"ildrr","6000","2","5","65535","65535","65535","65535","65535","65535","65535","65535","3111","3111","3111","1","21","21","21"
