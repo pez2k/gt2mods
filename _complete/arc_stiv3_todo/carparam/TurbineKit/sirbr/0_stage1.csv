@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","BoostGaugeLimit","LowRPMBoost","HighRPMBoost","SpoolRate","Unknown1","Unknown2","Unknown3","RPMIncrease","RedlineIncrease","HighRPMPowerMultiplier","LowRPMPowerMultiplier"
+"sirbr","5000","1","10","10","65","70","0","0","0","0","0","16","100"
