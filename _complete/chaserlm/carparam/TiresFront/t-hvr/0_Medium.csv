@@ -1,2 +1,2 @@
-﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"t-hvr","13000","Medium","0","195","0","MediumFront","0","0","0"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"t-hvr","13000","Medium","0","TireSize\1440_225-45R17.csv","0","TireCompound\06_MediumFront.dat","0","0","0"

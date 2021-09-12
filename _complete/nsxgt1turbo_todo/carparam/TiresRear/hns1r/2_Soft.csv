@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"hns1r","Soft","0","202","0","SoftRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"hns1r","Soft","0","TireSize\1950_295-40R18.csv","0","TireCompound\09_SoftRear.dat","0","0","0"
