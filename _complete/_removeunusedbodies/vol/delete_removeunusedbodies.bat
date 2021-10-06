@@ -1,0 +1,17 @@
+del files\carobj\a26ss.*
+del files\carobj\a2vss.*
+del files\carobj\aebrr.*
+del files\carobj\efnon.*
+del files\carobj\gmsdr.*
+del files\carobj\gt--a.*
+del files\carobj\gt001.*
+del files\carobj\gtlbn.*
+del files\carobj\gtlgn.*
+del files\carobj\gtlsn.*
+del files\carobj\gtnkn.*
+del files\carobj\h2car.*
+del files\carobj\iomsr.*
+del files\carobj\q2sgn.*
+del files\carobj\s2ren.*
+del files\carobj\uf40r.*
+del files\carobj\ul40r.*
