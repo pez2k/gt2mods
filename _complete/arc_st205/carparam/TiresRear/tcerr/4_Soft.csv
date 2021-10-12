@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"tcerr","Soft","0","144","0","SoftRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"tcerr","Soft","0","TireSize\1440_225-45R17.csv","0","TireCompound\09_SoftRear.dat","0","0","0"

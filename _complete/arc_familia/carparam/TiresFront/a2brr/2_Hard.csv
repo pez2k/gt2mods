@@ -1,2 +1,2 @@
-﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"a2brr","10500","Hard","0","100","0","HardFront","0","0","0"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"a2brr","10500","Hard","0","TireSize\1000_205-45R16.csv","0","TireCompound\04_HardFront.dat","0","0","0"

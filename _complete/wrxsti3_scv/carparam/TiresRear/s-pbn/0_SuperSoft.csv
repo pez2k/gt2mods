@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"s-pbn","SuperSoft","0","140","0","SuperSoftRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"s-pbn","SuperSoft","0","TireSize\1400_215-45R17.csv","0","TireCompound\11_SuperSoftRear.dat","0","0","0"

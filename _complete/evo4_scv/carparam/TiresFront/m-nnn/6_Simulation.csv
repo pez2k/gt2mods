@@ -1,2 +1,2 @@
-﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"m-nnn","2000","Simulation","0","107","0","SimulationFront","0","0","0"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"m-nnn","2000","Simulation","0","TireSize\1070_215-55R16.csv","0","TireCompound\16_SimulationFront.dat","0","0","0"

@@ -1,2 +1,2 @@
-﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"t-eln","15000","Soft","0","106","0","SoftFront","0","0","0"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"t-eln","15000","Soft","0","TireSize\1060_215-50R16.csv","0","TireCompound\08_SoftFront.dat","0","0","0"

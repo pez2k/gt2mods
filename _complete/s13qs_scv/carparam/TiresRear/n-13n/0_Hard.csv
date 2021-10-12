@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"n-13n","Hard","0","67","0","HardRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"n-13n","Hard","0","TireSize\0670_195-65R15.csv","0","TireCompound\05_HardRear.dat","0","0","0"

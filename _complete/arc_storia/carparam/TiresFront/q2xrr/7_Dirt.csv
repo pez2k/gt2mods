@@ -1,2 +1,2 @@
-﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"q2xrr","12500","Dirt","0","32","0","DirtFront","0","0","0"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"q2xrr","12500","Dirt","0","TireSize\0320_165-65R14.csv","0","TireCompound\12_DirtFront.dat","0","0","0"

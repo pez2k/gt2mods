@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"s-pbn","Simulation","0","140","0","SimulationRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"s-pbn","Simulation","0","TireSize\1400_215-45R17.csv","0","TireCompound\17_SimulationRear.dat","0","0","0"

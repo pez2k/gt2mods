@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"h-vrn","Simulation","0","101","0","SimulationRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"h-vrn","Simulation","0","TireSize\1010_205-50R16.csv","0","TireCompound\17_SimulationRear.dat","0","0","0"

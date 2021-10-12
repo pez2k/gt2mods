@@ -1,2 +1,2 @@
-﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"buc4n","13000","Dirt","0","176","0","RWDDirtFront","0","0","0"
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"buc4n","13000","Dirt","0","TireSize\1760_235-40R18.csv","0","TireCompound\14_RWDDirtFront.dat","0","0","0"

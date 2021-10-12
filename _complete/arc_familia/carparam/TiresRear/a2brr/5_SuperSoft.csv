@@ -1,2 +1,2 @@
-﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","Unknown1","SlipMultiplier","GripMultiplier"
-"a2brr","SuperSoft","0","100","0","SuperSoftRear","0","0","0"
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"a2brr","SuperSoft","0","TireSize\1000_205-45R16.csv","0","TireCompound\11_SuperSoftRear.dat","0","0","0"
