@@ -1,0 +1,2 @@
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"bvven","Dirt","0","TireSize\1400_215-45R17.csv","0","TireCompound\13_DirtRear.dat","0","0","0"
