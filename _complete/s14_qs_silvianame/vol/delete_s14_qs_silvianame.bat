@@ -1,0 +1,16 @@
+del files\carlogo\nq14nn--.tim
+del files\carlogo\nq14no--.tim
+del files\carlogo\nq14np--.tim
+del files\carlogo\nq14nq--.tim
+del files\carlogo\nq14rn--.tim
+del files\carlogo\nq14ro--.tim
+del files\carlogo\nq14rp--.tim
+del files\carlogo\nq14rq--.tim
+del files\carlogo\nq15nn--.tim
+del files\carlogo\nq15no--.tim
+del files\carlogo\nq15np--.tim
+del files\carlogo\nq15nq--.tim
+del files\carlogo\nq15rn--.tim
+del files\carlogo\nq15ro--.tim
+del files\carlogo\nq15rp--.tim
+del files\carlogo\nq15rq--.tim
