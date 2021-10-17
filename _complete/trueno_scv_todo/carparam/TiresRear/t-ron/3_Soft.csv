@@ -1,0 +1,2 @@
+﻿"CarId","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"t-ron","Soft","0","TireSize\0440_195-65R14.csv","0","TireCompound\09_SoftRear.dat","0","0","0"
