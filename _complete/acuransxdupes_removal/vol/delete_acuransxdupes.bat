@@ -1,0 +1,12 @@
+del files\carlogo\hnann*
+del files\carlogo\hnanr*
+del files\carlogo\hnarn*
+del files\carlogo\hnarr*
+del files\carlogo\hnasn*
+del files\carlogo\hnasr*
+del files\carobj\hnann.*
+del files\carobj\hnanr.*
+del files\carobj\hnarn.*
+del files\carobj\hnarr.*
+del files\carobj\hnasn.*
+del files\carobj\hnasr.*
