@@ -1,2 +1,2 @@
 ﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
-"hiasn","0","0","5","3000","3230","1900","1360","1034","787","65535","65535","4400","4400","4400","0","255","255","255"
+"hiasn","0","0","5","3000","3230","1900","1360","1034","787","-1","-1","4400","4400","4400","0","255","255","255"

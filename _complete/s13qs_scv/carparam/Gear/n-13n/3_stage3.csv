@@ -1,2 +1,2 @@
 ﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
-"n-13n","10000","3","5","65535","65535","65535","65535","65535","65535","65535","65535","4375","5500","2500","1","19","18","42"
+"n-13n","10000","3","5","-1","-1","-1","-1","-1","-1","-1","-1","4375","5500","2500","1","19","18","42"

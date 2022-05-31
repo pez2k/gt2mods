@@ -1,2 +1,2 @@
 ﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
-"ga4tn","0","0","5","3444","3500","1944","1226","838","659","65535","65535","3889","3889","3889","0","255","255","255"
+"ga4tn","0","0","5","3444","3500","1944","1226","838","659","-1","-1","3889","3889","3889","0","255","255","255"

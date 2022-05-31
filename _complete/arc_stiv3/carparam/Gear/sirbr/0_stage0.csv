@@ -1,2 +1,2 @@
 ﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
-"sirbr","0","0","5","3416","3083","2062","1545","1151","825","65535","65535","4444","4444","4444","0","255","255","255"
+"sirbr","0","0","5","3416","3083","2062","1545","1151","825","-1","-1","4444","4444","4444","0","255","255","255"
