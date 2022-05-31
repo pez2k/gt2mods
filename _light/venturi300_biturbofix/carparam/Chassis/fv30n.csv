@@ -1,2 +1,2 @@
-﻿"CarId","CentreOfMassLongitudinal","Unknown2","FrontGrip","RearGrip","Length","Height","CentreOfMassHeight","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
+﻿"CarId","FrontWeightDistribution","Unknown2","FrontGrip","RearGrip","Length","Height","Wheelbase","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
 "fv30n","40","0","98","103","4240","1180","2500","1279","48","90","39","56"

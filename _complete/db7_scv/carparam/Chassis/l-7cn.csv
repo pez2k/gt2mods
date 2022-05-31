@@ -1,2 +1,2 @@
-﻿"CarId","CentreOfMassLongitudinal","Unknown2","FrontGrip","RearGrip","Length","Height","CentreOfMassHeight","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
+﻿"CarId","FrontWeightDistribution","Unknown2","FrontGrip","RearGrip","Length","Height","Wheelbase","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
 "l-7cn","60","0","100","102","4722","1238","2591","1775","69","90","56","56"

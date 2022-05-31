@@ -1,2 +1,2 @@
-﻿"CarId","CentreOfMassLongitudinal","Unknown2","FrontGrip","RearGrip","Length","Height","CentreOfMassHeight","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
+﻿"CarId","FrontWeightDistribution","Unknown2","FrontGrip","RearGrip","Length","Height","Wheelbase","Weight","TurningResistance","PitchResistance","RollResistance","Unknown8"
 "t28rr","60","0","98","100","4365","1295","2525","1350","52","90","42","56"
