@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
+"gb3cn","0","0","5","4039","4230","2519","1665","1222","1000","-1","-1","2930","2930","2930","0","255","255","255"
