@@ -1,3 +1,3 @@
 ﻿"CarName","JPName","USName","EUName","BlockedInJapan","BlockedInUSA","BlockedInPALFIGS","BlockedInPALEnglish"
-"h-rxn","HONDA CR-X SiR (EF8)","Honda Civic CRX Si '91","Honda CR-X 1.6 VTEC","False","False","False","False"
-"h-rxr","[R]HONDA CR-X SiR (EF8)","[R]Honda Civic CRX Si '91","[R]Honda CR-X 1.6 VTEC","False","False","False","False"
+"h-rxn","HONDA CR-X SiR (EF8)","Honda Civic CRX Si '91","Honda CR-X 1.6 VTEC","True","True","True","True"
+"h-rxr","[R]HONDA CR-X SiR (EF8)","[R]Honda Civic CRX Si '91","[R]Honda CR-X 1.6 VTEC","True","True","True","True"
