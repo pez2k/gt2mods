@@ -1,0 +1,7 @@
+﻿"CarName","JPName","USName","EUName","BlockedInJapan","BlockedInUSA","BlockedInPALFIGS","BlockedInPALEnglish"
+"t-eln","TOYOTA CELICA SS-II '95","Celica SS-II '95","Celica SS-II '95","True","True","True","True"
+"t-oan","TOYOTA SOARER 2.5 VVT-i","Soarer 2.5GT-T VVT-i '96","Soarer 2.5GT-T VVT-i '96","True","True","True","True"
+"t-pnn","SUPRA RZ '96","Toyota Supra RZ '96","Toyota Supra RZ '96","True","True","True","True"
+"t28rr","[R]TOYOTA ST165 RALLY CAR","[R]Celica Rally Car '88","[R]Celica Rally Car '88","False","False","False","False"
+"t2rrr","[R]TOYOTA ST185 RALLY CAR","[R]Celica Rally Car '91","[R]Celica Rally Car '91","False","False","False","False"
+"tcerr","[R]TOYOTA CELICA RALLY CAR","[R]Celica Rally Car '95","[R]Celica Rally Car '95","False","False","False","False"
