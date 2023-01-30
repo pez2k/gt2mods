@@ -1,2 +1,10 @@
 del files\carlogo\h2s2sn--.tim
 del files\carlogo\h2s2so--.tim
+del files\carlogo\h-rxnn--.tim
+del files\carlogo\h-rxno--.tim
+del files\carlogo\h-rxnp--.tim
+del files\carlogo\h-rxnq--.tim
+del files\carlogo\h-rxrn--.tim
+del files\carlogo\h-rxro--.tim
+del files\carlogo\h-rxrp--.tim
+del files\carlogo\h-rxrq--.tim
