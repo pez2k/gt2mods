@@ -1,0 +1,3 @@
+# Patch the total event count used for completion percentage calculations
+g 9E14
+w E7   # 229 -> 231 events
