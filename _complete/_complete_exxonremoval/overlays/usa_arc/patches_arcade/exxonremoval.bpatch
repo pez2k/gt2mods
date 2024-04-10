@@ -1,0 +1,3 @@
+# Patch the hardcoded car list to use the Esso 206 Rally Car instead of the removed Exxon version
+g 172FF
+w 77    # fp2xr -> fp2wr
