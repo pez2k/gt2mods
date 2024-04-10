@@ -1,0 +1,51 @@
+# Patch the code that detects whether a car is NA or Turbo in order to show or hide the Turbo section
+# of the pre-race Change Parts menu, so that instead of only checking that turbo kit upgrades exist,
+# it also checks if the stock turbo kit is not the generic no-turbo part (ID 0). This makes the Turbo
+# section appear for the W8 and all turbo racecars.
+
+# // Original code - checks if any turbo kit upgrades exist
+# undefined4 CurrentCarHasTurboKits(int partsOffset)
+# {
+#   int i;
+#   bool hasTurboKit;
+#   
+#   hasTurboKit = 0;
+#   i = 1; // Loop from turbo kit 1 to 4, as kit 0 is always present either as a real part for Turbo or dummy part for N/A
+#   partsOffset = partsOffset + 4; // Skip the first part to get to kit 1
+#   do {
+#     if (-1 < *(int *)(partsOffset + 0x148c)) { // If part ID > -1 (-1 is an invalid ID)
+#       hasTurboKit = 1; // We have a turbo kit available
+#     }
+#     i = i + 1;
+#     partsOffset = partsOffset + 4;
+#   } while (i < 5);
+#   return hasTurboKit;
+# }
+
+# // Patched code - checks if any turbo kit parts exist, including stock, but excluding the generic dummy part
+# undefined4 CurrentCarHasTurboKits(int partsOffset)
+# {
+#   int i;
+#   bool hasTurboKit;
+#   
+#   hasTurboKit = 0;
+#   i = 0; // Loop from turbo kit 0 to 4
+#   // No longer skip the first part
+#   do {
+#     if (0 < *(int *)(partsOffset + 0x148c)) { // If part ID > 0 (ID 0 is the generic dummy part used as kit 0 on N/A cars)
+#       hasTurboKit = 1; // We have a turbo kit available
+#     }
+#     i = i + 1;
+#     partsOffset = partsOffset + 4;
+#   } while (i < 5);
+#   return hasTurboKit;
+# }
+
+# The actual patch
+g 4FB7C
+w 00    # li v1,0x1 -> li v1,0x0
+m 03
+w 00
+l 04    # addiu a0,a0,0x4 -> nop
+m 0B
+w 18    # bltz v0,(+0x0C) -> blez v0,(+0x0C)
