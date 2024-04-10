@@ -1,0 +1,9 @@
+# Change game ID and display name for both main and replay save
+g 82308
+w 37 43 # SCES-02380REPLAY -> SCES-02380REPL7C
+m 9
+w DC    # GT2 Replay File -> GT2+Replay File
+g 824E4
+w 37 43 # SCES-02380GAME -> SCES-02380GAME7C
+m 9
+w DC    # GT2 Game File -> GT2+Game File
