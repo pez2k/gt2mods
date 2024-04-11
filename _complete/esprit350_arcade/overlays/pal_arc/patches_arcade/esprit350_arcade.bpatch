@@ -1,0 +1,23 @@
+# Patch the hardcoded car list in Arcade mode to replace the Clio V6 with the Esprit Sport 350
+g 170E0    # Arcade car ID string array
+m 20       # Move to fifth car (8 * 4)
+w 69 6F 65 # frcsn -> ioesn
+
+g 41B20    # Arcade car list structure start
+
+m 10       # Move to class S struct
+m 54       # Move to manufacturer logos for class S
+m 08       # Move to fifth car (2 * 4)
+w 0E 00    # Lotus logo
+
+m 0A       # Move to performance ratings for class S
+m 0C       # Move to fifth car (3 * 4)
+w 08 0A 08 # 8 speed / 10 handling / 8 acceleration
+
+m 11       # Move to car stats for class S
+m 28       # Move to fifth car (10 * 4)
+w 62 01    #  354ps
+w 64 19    # 6500rpm
+w 98 01    # 40.8kgm
+w 9A 10    # 4250rpm
+w 14 05    # 1300kg
