@@ -1,0 +1,141 @@
+# Patch the hardcoded rally car stats in Arcade mode to reflect the actual performance
+g 3F6F0 # Arcade car list structure start
+
+m 10    # Move to class S struct
+m EC    # Move to class A struct
+m B0    # Move to class B struct
+m D0    # Move to class C struct
+m D0    # Move to class R struct
+m 138   # Move to car stats for class R
+
+# t2cxr - Celica Rally Car
+m 0A    # Unchanged
+
+# m2a5r - Evo 5 Rally Car
+m 0A    # Unchanged
+
+# s2irr - Impreza Rally Car '99
+m 0A    # Unchanged
+
+# effwr - Focus Rally Car
+m 0A    # Unchanged
+
+# fp2wr - 206 Rally Car
+m 0A    # Unchanged
+
+# t2rrr - Celica ST185
+w 72 01 #  265ps  ->  370ps
+w 58 1B # 6000rpm -> 7000rpm
+w AF 01 # 39.9kgm -> 43.1kgm
+w E0 15 # 5000rpm -> 5600rpm
+w D3 04 # 1400kg  -> 1235kg
+
+# nplrr - Pulsar GTi-R
+w 40 01 #  235ps  ->  320ps
+m 2     # 6500rpm unchanged
+w 74 01 # 33.9kgm -> 37.2kgm
+w 7C 15 # 5000rpm -> 5500rpm
+w 65 04 # 1220kg  -> 1125kg
+
+# a2brr - Familia GT-R
+w 40 01 #  245ps  ->  320ps
+w 9C 18 # 6000rpm -> 6300rpm
+w 75 01 # 34.3kgm -> 37.3kgm
+w D4 17 # 4500rpm -> 6100rpm
+w 7E 04 # 1210kg  -> 1150kg
+
+# sirbr - Impreza WRX STi v3
+w 6D 01 #  285ps  ->  365ps
+w C8 19 # 6500rpm -> 6600rpm
+w A8 01 # 40.9kgm -> 42.4kgm
+w 18 15 # 4000rpm -> 5400rpm
+w 51 04 # 1250kg  -> 1105kg
+
+# fcsrr - Saxo
+w 0E 01 #  200ps  ->  270ps
+w 20 1C # 6500rpm -> 7200rpm
+w 11 01 # 26.2kgm -> 27.3kgm
+w BC 1B # 5000rpm -> 7100rpm
+w 5C 03 #  935kg  ->  860kg
+
+# ildrr - Delta HF
+w 63 01 #  270ps  ->  355ps
+w D4 17 # 6000rpm -> 6100rpm
+w AB 01 # 45.9kgm -> 42.7kgm
+w 88 13 # 3500rpm -> 5000rpm
+w 7E 04 # 1300kg  -> 1150kg
+
+# goiir - Tigra Ice Race Car
+m 0A    # Unchanged
+
+# frmrr - Megane
+w 2C 01 #  225ps  ->  300ps
+w 20 1C # 6000rpm -> 7200rpm
+w 3C 01 # 30.9kgm -> 31.6kgm
+w C8 19 # 4500rpm -> 6600rpm
+w 6F 04 # 1170kg  -> 1135kg
+
+# t28rr - Celica ST165
+w 5E 01 #  255ps  ->  350ps
+w C8 19 # 6000rpm -> 6600rpm
+w 99 01 # 38.7kgm -> 40.9kgm
+w E0 15 # 4000rpm -> 5600rpm
+w AB 04 # 1350kg  -> 1195kg
+
+# tcerr - Celica ST205
+w 31 01 #  300ps  ->  305ps
+w 00 19 # 6000rpm -> 6400rpm
+w 67 01 # 37.9kgm -> 35.9kgm
+w D4 17 # 4000rpm -> 6100rpm
+w 2D 05 # 1380kg  -> 1325kg
+
+# mlror - Evo 3
+w 5E 01 #  260ps  ->  350ps
+w C8 19 # 6500rpm -> 6600rpm
+w 82 01 # 35.0kgm -> 38.6kgm
+w C8 19 # 3000rpm -> 6600rpm
+w 5B 04 # 1260kg  -> 1115kg
+
+# mlrnr - Evo 4
+w 77 01 #  280ps  ->  375ps
+w C8 19 # 6500rpm -> 6600rpm
+w A8 01 # 41.5kgm -> 42.4kgm
+w EC 13 # 3000rpm -> 5100rpm
+w AB 04 # 1350kg  -> 1195kg
+
+# m2w6r - Evo 6 Rally Car
+m 0A    # Unchanged
+
+# q2xrr - Storia X4
+w C8 00 #  155ps  ->  200ps
+w 84 1C # 7000rpm -> 7300rpm
+w CB 00 # 18.9kgm -> 20.3kgm
+w BC 1B # 5000rpm -> 7100rpm
+w 07 03 #  840kg  ->  775kg
+
+# efesr - Escort Rally Car
+m 0A    # Unchanged
+
+# ilstr - Stratos
+w 4A 01 #  240ps  ->  330ps
+w B0 1D # 7500rpm -> 7600rpm
+w 47 01 # 33.4kgm -> 32.7kgm
+w A8 16 # 4000rpm -> 5800rpm
+w 89 03 #  980kg  ->  905kg
+
+# fp3rr - 306 S16
+w 3B 01 #  225ps  ->  315ps
+w 40 1F # 6500rpm -> 8000rpm
+w 39 01 # 28.6kgm -> 31.3kgm
+w C8 19 # 5500rpm -> 6600rpm
+w 2E 04 # 1160kg  -> 1070kg
+
+# brm1r - Mini 1275S
+m 0A    # Unchanged
+
+# gv4rr - Golf
+w 40 01 #  225ps  ->  320ps
+w 58 1B # 6000rpm -> 7000rpm
+w 70 01 # 36.6kgm -> 36.8kgm
+w EC 13 # 2000rpm -> 5100rpm
+w 74 04 # 1236kg  -> 1140kg
