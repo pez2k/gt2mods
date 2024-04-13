@@ -1,0 +1,142 @@
+# Patch out the PS to BHP conversion
+
+# Car selection screen, 'Max Power' value
+
+# // Original code
+# if (carStats[1] == 0) { // If there is no peak power RPM value
+#   FormatValue(param_1 + 0xf0, "%dhp", (carStats[0] * 1000) / 1014); // Format as just hp, multiplying the power by 1.014 for a rough PS to BHP conversion
+# }
+# else {
+#   FormatValue(param_1 + 0xf0, "%dhp/%drpm", (carStats[0] * 1000) / 1014); // Else format as hp/rpm
+# }
+
+# // Patched code
+# if (carStats[1] == 0) {
+#   FormatValue(param_1 + 0xf0, "%dhp", carStats[0]); // Don't bother modifying the power value
+# }
+# else {
+#   FormatValue(param_1 + 0xf0, "%dhp/%drpm", carStats[0]);
+# }
+
+# Old patch
+# g 8B40
+# w 00 00 66 86 # _subu a2,v0,a2 -> _lh a2,0x0(s3) // Let the code calculate the BHP value, then instead of writing the result to the register, just load the original PS value again into that register. Ideally should also nop the calculation to avoid doing pointless work
+# g 8B84
+# w 00 00 66 86 # _subu a2,v0,a2 -> _lh a2,0x0(s3)
+
+# Patch
+g 8B04
+z 24          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
+m 08          # Retain the setup of a0 and a1
+z 0C          # Remove remaining calculation code
+m 04          # Preserve the function call itself
+w 00 00 66 86 # lh a2,0x0(s3) // Load the PS value into a2 instead of the calculation result
+m 08          # Move to else case
+z 20          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
+m 08          # Retain the setup of a0 and a1
+z 0C          # Remove remaining calculation code
+m 04          # Preserve the function call itself
+w 00 00 66 86 # lh a2,0x0(s3) // Load the PS value into a2 instead of the calculation result
+
+
+
+# Car setup screen?
+
+# // Original code
+# FUN_80011bb0(param_1 + iVar13 * 0x100 + 0x7fc,(carData->Power * 1000) / 1014);
+
+# // Patched code
+# FUN_80011bb0(param_1 + iVar13 * 0x100 + 0x7fc,carData->Power);
+
+# Old patch - leaves too many unnecessary instructions behind
+# g 9552
+# w 85   # lh v0,0x0(s4) -> lh a1,0x0(s4) // Load the PS value directly into a1 instead of a temporary register
+# m 05   # Skip loading of v1
+# w 00
+# l 18   # Remove code modifying v0 and a1 that calculates the 1.014 multiplication
+# m 10   # Retain the manipulation of param_1
+# w 00
+# l 8    # Remove remaining calculation code
+# m 8    # Preserve the function call itself
+# w 00
+# l 4    # Remove assignment of the calculation result to a1 as we did it earlier
+
+# Patch
+g 954C
+z 24          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
+m 10          # Retain the setup of a0
+z 0C          # Remove the rest of the calculation
+m 4           # Preserve the function call itself
+w 00 00 85 86 # lh a1,0x0(s4) // Load the PS value into a1 instead of the calculation result
+
+
+
+# Car setup screen graph axis, possibly? Missing from original
+
+# // Original code
+# *(undefined2 *)(iVar6 + param_1 + 0xaa) = (short)(((int)(short)param_5->Power * 1000) / 1014);
+
+# // Patched code
+# *(word *)(iVar6 + param_1 + 0xaa) = param_5->Power;
+
+# Minimal patch
+# g 9740
+# w 00 00 83 86 # subu v1,v1,v0 -> lh v1,0x0(s4) // Load the PS value instead of the calculation result
+
+# Patch
+g 96EC
+z 04          # Remove the setup of a0 for the calculation
+m 20
+z 20          # Remove loading of PS value into v1, then calculation of PS * 1.014 using v0
+m 0C          # Retain the setup of a0, a1, and a2
+z 0C          # Remove the rest of the calculation
+w 00 00 83 86 # lh v1,0x0(s4) // Load the PS value into v1 instead of the calculation result
+
+
+
+# Car setup screen graph points, possibly? Missing from original
+
+# // Original code
+# local_240[iVar4] = ((((int)(short)puVar5[0x16] * (int)(short)param_5->Power) / (int)(uint)*param_3) * 1000) / 1014;
+
+# // Patched code
+# local_240[iVar4] = ((int)(short)puVar5[0x16] * (int)(short)param_5->Power) / (int)(uint)*param_3;
+
+# Patch - gap between offsets different to PAL due to non-metric torque calculation mixed in
+g 97C8
+z 08   # Remove the setup of t2 for the calculation
+g 981C
+z 18   # Remove the calculation which overwrites the PS value in v1
+m 04   # Retain the setup of a0
+z 10   # Remove the rest of the calculation
+
+
+
+# Home Garage car list screen
+
+# // Original code
+# FUN_8008cf88(auStack104,"%dhp",((int)*(short *)(param_4 + 4) * 1000) / 1014);
+
+# // Patched code
+# FUN_8008cf88(auStack104,"%dhp",(int)*(short *)(param_4 + 4));
+
+# Old patch
+# g F3BA
+# w 06   # lh v0,0x4(t0) -> lh a2,0x4(t0) // Load the PS value directly into a2
+# m 05
+# w 00
+# l 18   # Remove the calculation
+# m 10   # Retain the setup of a0 and a1
+# w 00
+# l 0C   # Remove the rest of the calculation
+# m 04   # Preserve the function call itself (and some other junk)
+# w 00
+# l 04   # Remove assignment of the calculation result to a2
+
+# Patch
+g F3B4
+z 24          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
+m 10          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 04 00 06 85 # lh a2,0x4(t0) // Load the PS value into a2 instead of the calculation result
