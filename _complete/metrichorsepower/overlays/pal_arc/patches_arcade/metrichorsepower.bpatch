@@ -18,14 +18,9 @@
 #   FormatValue(param_1 + 0xf0, "%dhp/%drpm", carStats[0]);
 # }
 
-# Old patch
-# g 8B78
-# w 00 00 66 86 # _subu a2,v0,a2 -> _lh a2,0x0(s3) // Let the code calculate the BHP value, then instead of writing the result to the register, just load the original PS value again into that register. Ideally should also nop the calculation to avoid doing pointless work
-# g 8BBC
-# w 00 00 66 86 # _subu a2,v0,a2 -> _lh a2,0x0(s3)
-
 # Patch
-g 8B3C
+g 8B00        # Jump close to optimise pattern finding speed
+p 50 20 03 3C 00 00 62 86 # At 0x8B3C PAL / 0x8B04 US 1.1
 z 24          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
 m 08          # Retain the setup of a0 and a1
 z 0C          # Remove remaining calculation code
@@ -48,21 +43,9 @@ w 00 00 66 86 # lh a2,0x0(s3) // Load the PS value into a2 instead of the calcul
 # // Patched code
 # FUN_80011bb0(param_1 + iVar13 * 0x100 + 0x7fc,carData->Power);
 
-# Old patch - leaves too many unnecessary instructions behind
-# g 9556
-# w 85   # lh v0,0x0(s4) -> lh a1,0x0(s4) // Load the PS value directly into a1 instead of a temporary register
-# m 05   # Skip loading of v1
-# w 00
-# l 18   # Remove code modifying v0 and a1 that calculates the 1.014 multiplication
-# m 10   # Retain the manipulation of param_1
-# w 00
-# l 8    # Remove remaining calculation code
-# m 8    # Preserve the function call itself
-# w 00
-# l 4    # Remove assignment of the calculation result to a1 as we did it earlier
-
 # Patch
-g 9550
+g 9500        # Jump close to optimise pattern finding speed
+p 50 20 03 3C 00 00 82 86 # At 0x9550 PAL / 0x954C US 1.1
 z 24          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
 m 10          # Retain the setup of a0
 z 0C          # Remove the rest of the calculation
@@ -71,7 +54,7 @@ w 00 00 85 86 # lh a1,0x0(s4) // Load the PS value into a1 instead of the calcul
 
 
 
-# Car setup screen graph axis, possibly? Missing from original
+# Car setup screen graph axis, possibly?
 
 # // Original code
 # *(undefined2 *)(iVar6 + param_1 + 0xaa) = (short)(((int)(short)param_5->Power * 1000) / 1014);
@@ -79,12 +62,9 @@ w 00 00 85 86 # lh a1,0x0(s4) // Load the PS value into a1 instead of the calcul
 # // Patched code
 # *(word *)(iVar6 + param_1 + 0xaa) = param_5->Power;
 
-# Minimal patch
-# g 974C
-# w 00 00 83 86 # subu v1,v1,v0 -> lh v1,0x0(s4) // Load the PS value instead of the calculation result
-
 # Patch
-g 96F0
+g 9680        # Jump close to optimise pattern finding speed
+p 50 20 04 3C 0A 00 62 96 # At 0x96F0 PAL / 0x96EC US 1.1
 z 04          # Remove the setup of a0 for the calculation
 m 20
 z 20          # Remove loading of PS value into v1, then calculation of PS * 1.014 using v0
@@ -94,7 +74,7 @@ w 00 00 83 86 # lh v1,0x0(s4) // Load the PS value into v1 instead of the calcul
 
 
 
-# Car setup screen graph points, possibly? Missing from original
+# Car setup screen graph points, possibly?
 
 # // Original code
 # local_240[iVar4] = ((((int)(short)puVar5[0x16] * (int)(short)param_5->Power) / (int)(uint)*param_3) * 1000) / 1014;
@@ -103,9 +83,12 @@ w 00 00 83 86 # lh v1,0x0(s4) // Load the PS value into v1 instead of the calcul
 # local_240[iVar4] = ((int)(short)puVar5[0x16] * (int)(short)param_5->Power) / (int)(uint)*param_3;
 
 # Patch
-g 9788
-z 08   # Remove the setup of t1 for the calculation
-g 97D4
+g 9700 # Jump close to optimise pattern finding speed
+p FF FF 02 24 18 02 A2 AF
+m 20   # At 0x9788 PAL / 0x97C8 US - can't pattern match the exact spots in this function as register use is different in US due to extra code for ft.lb conversion
+z 08   # Remove the setup of the constant for the calculation
+p 1A 00 03 02 12 18 00 00
+m 08   # At 0x97D4 PAL / 0x981C US
 z 18   # Remove the calculation which overwrites the PS value in v1
 m 04   # Retain the setup of a0
 z 10   # Remove the rest of the calculation
@@ -120,21 +103,9 @@ z 10   # Remove the rest of the calculation
 # // Patched code
 # FUN_8008cf88(auStack104,"%dhp",(int)*(short *)(param_4 + 4));
 
-# Old patch
-# g F382
-# w 06   # lh v0,0x4(t0) -> lh a2,0x4(t0) // Load the PS value directly into a2
-# m 05
-# w 00
-# l 18   # Remove the calculation
-# m 10   # Retain the setup of a0 and a1
-# w 00
-# l 0C   # Remove the rest of the calculation
-# m 04   # Preserve the function call itself (and some other junk)
-# w 00
-# l 04   # Remove assignment of the calculation result to a2
-
 # Patch
-g F37C
+g F300        # Jump close to optimise pattern finding speed
+p 50 20 03 3C 04 00 02 85 # At 0xF37C PAL / 0xF3B4 US
 z 24          # Remove loading of PS value into v0, then calculation of PS * 1.014 using v1
 m 10          # Retain the setup of a0 and a1
 z 0C          # Remove the rest of the calculation
