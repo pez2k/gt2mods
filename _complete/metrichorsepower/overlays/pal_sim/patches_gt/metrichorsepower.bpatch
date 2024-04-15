@@ -1,0 +1,199 @@
+# Patch out the PS to BHP conversion
+
+# Event power restriction (used in race lists)
+
+# // Original code
+# FormatString(output,"~%dhp",(limit * 1000) / 1014);
+
+# // Patched code
+# FormatString(output,"~%dhp",limit);
+
+# Old patch
+# g BDF0 # BDA8 US 1.2
+# w 21 30 00 02 # subu a2,v0,a2 -> move a2,s0 // Assign the PS value to a2 instead of the calculation result
+
+# Patch
+g BD00        # Jump close to optimise pattern finding speed
+p 0F 00 00 1A 50 20 02 3C # 0xBDB4 PAL / 0xBD6C US 1.2
+m 04          # Skip a blez used to make the pattern unique
+z 20          # Remove the setup of the constant and the calculation - the PS value is already in s0 before this
+m 08          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 30 00 02 # move a2,s0 // Move the stored PS value into a2 instead of the calculation result
+
+
+
+# Menu widget 0xC6 - Highest-powered car in garage (unused)
+
+# // Original code
+# FormatPower(output,((Garages[0].GarageCars[car].DisplayedHPAndIsRM & 0x3fff) * 1000) / 1014);
+
+# // Patched code
+# FormatPower(output,Garages[0].GarageCars[car].DisplayedHPAndIsRM & 0x3fff);
+
+# Old patch
+# g C190 # C14C US 1.2
+# z 04
+# m 26
+# w 05          # lhu v0,0x98(s0) -> lhu a1,0x98(s0) // Load the PS value into a1 instead of v0
+# m 01
+# z 20          # Remove all of the calculations, including the bitwise and on v0
+# m 08
+# z 0C
+# m 04
+# w FF 3F A5 30 # subu a1,v0,a1 -> andi a1,a1,0x3fff // Do the bitwise and on a1 instead
+
+# Patch
+g C100        # Jump close to optimise pattern finding speed
+p ?? 03 40 04 50 20 03 3C # 0xC18C PAL / 0xC148 US 1.2
+m 04          # Skip a bltz used to make the pattern unique
+z 04          # Remove the first part of the setup of the constant
+m 28          # Skip array code and loading of the PS value into v0
+z 04          # Remove the rest of the setup of the constant
+m 04          # Retain the bitwise and on v0
+z 18          # Remove the rest of the setup of the constant and the calculation
+m 08          # Retain the setup of a0 and s1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 28 02 00 # move a1,v0 // Move the PS value directly into a1 instead of the calculation result
+
+
+
+# Menu widget 0xB9 - Car power / RPM display (used on car info screen)
+
+# // Original code
+# if (peakPowerRPM < 1) {
+#   FormatString(output,"%dhp",(power * 1000) / 1014,peakPowerRPM);
+# }
+# else {
+#   FormatString(output,"%dhp / %drpm",(power * 1000) / 1014,peakPowerRPM);
+# }
+
+# // Patched code
+# if (peakPowerRPM < 1) {
+#   FormatString(output,"%dhp",power,peakPowerRPM);
+# }
+# else {
+#   FormatString(output,"%dhp / %drpm",power,peakPowerRPM);
+# }
+
+# Old patch
+# g C71C # C720 US 1.2
+# w 21 30 60 00 # subu a2,v0,a2 -> move a2,v1 // Assign v1 directly to a2 instead of the calculation result
+# g C760 # C764 US 1.2
+# w 21 30 60 00 # subu a2,v0,a2 -> move a2,v1 // Assign v1 directly to a2 instead of the calculation result
+
+# Patch
+g C680        # Jump close to optimise pattern finding speed
+p 12 00 40 1C 50 20 02 3C # 0xC6DC PAL / 0xC6E0 US 1.2
+m 04          # Skip a bgtz used to make the pattern unique
+z 20          # Remove the setup of the constant and the calculation - the PS value is already in v1 before this
+m 0C          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 30 60 00 # move a2,v1 // Move the PS value directly into a2 instead of the calculation result
+m 08          # Move to the else case
+z 1C          # Remove the setup of the constant and the calculation - the PS value is still in v1
+m 0C          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 30 60 00 # move a2,v1 // Move the PS value directly into a2 instead of the calculation result
+
+
+
+# Menu widget 0x4A - Car power display
+
+# // Original code
+# FormatString(output,"%dhp",(*(int *)(local_2c + 0x3c0) * 1000) / 1014);
+
+# // Patched code
+# FormatString(output,"%dhp",*(int *)(local_2c + 0x3c0) * 1000);
+
+# Old patch
+# g C90E # C99A US 1.2
+# w 06 # lw v0,0x3c0(t0) -> lw a2,0x3c0(t0) // PAL - load the PS value directly into a2
+# # w 26 # lw v0,0x3c0(t1) -> lw a2,0x3c0(t1) // US 1.2
+# m 01
+# z 1C
+# m 0C
+# z 0C
+# m 04
+# z 04
+
+# Patch
+g C880        # Jump close to optimise pattern finding speed
+p 44 03 ?? 8F 50 20 03 3C # 0xC904 PAL / 0xC990 US 1.2
+m 04          # Skip a lw used to make the pattern unique
+z 04          # Remove the first part of the setup of the constant
+m 04          # Retain the loading of the PS value into v0, based on t0 (PAL) / t1 (US 1.2)
+z 1C          # Remove the rest of the setup of the constant and the calculation
+m 0C          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 30 02 00 # move a2,v0 // Move the PS value directly into a2 instead of the calculation result
+
+
+
+# Menu widget 0x49 - Post-upgrade car power (used when buying upgrades)
+
+# // Original code
+# FormatPower(output,(DAT_801c30e0 * 1000) / 1014);
+
+# // Patched code
+# FormatPower(output,DAT_801c30e0);
+
+# Old patch
+# g C9E5 # CA71 US 1.2
+# w 28 # move v1,v0 -> move a1,v0 // Store the PS value in a1 directly
+# m 02
+# m 20
+# z 30
+# m 04
+# w 28 00 A4 27 # subu a1,v0,a1 -> addiu a0,sp,0x28 // Setup of a0 moved down from the above zeroed section
+
+# Patch
+g C980        # Jump close to optimise pattern finding speed
+p ?? ?? A5 24 50 20 02 3C # 0xCA04 PAL / 0xCA90 US 1.2
+m 04          # Skip an addiu used to make the pattern unique
+z 20          # Remove the setup of the constant and the calculation - the PS value is already in v1 before this
+m 04          # Retain the setup of a0
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 28 03 00 # move a1,v1 // Move the PS value directly into a1 instead of the calculation result
+
+
+
+# Menu widget 0x48 - Pre-upgrade car power (used when buying upgrades)
+
+# // Original code
+# FormatPower(output,(DAT_801c30dc * 1000) / 1014);
+
+# // Patched code
+# FormatPower(output,DAT_801c30dc);
+
+# Old patch - PAL
+g CA6E
+w 05 // lw v0,0x1c(t0) -> lw a1,0x1c(t0) // Load the PS value into a1 directly
+m 01
+z 2C
+m 04
+w 28 00 A4 27 # subu a1,v0,a1 -> addiu a0,sp,0x28 // Setup of a0 moved down from the above zeroed section
+
+# Old patch - US 1.2
+g CB24
+z 04          # Remove the only write to v0, which would have replaced the PS value
+m 04
+w 21 28 02 00 # subu a1,v0,a1 -> move a1,v0 // Move the PS value into a1 directly
+
+# Patch
+g CA00        # Jump close to optimise pattern finding speed
+p 10 00 A2 AF 50 20 03 3C # 0xCA5C PAL / 0xCAE8 US 1.2
+m 04          # Skip a sw used to make the pattern unique
+z 04          # Remove the first part of the setup of the constant
+m 0C          # Retain the loading of the PS value into v0, based on t0
+z 1C          # Remove the rest of the setup of the constant and the calculation, including parts that overwrite v0
+m 04          # Retain the setup of a0
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 28 02 00 # move a1,v0 // Move the PS value directly into a1 instead of the calculation result

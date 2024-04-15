@@ -1,0 +1,49 @@
+# Patch out the PS to BHP conversion
+
+# License test pre-race screen - car stats
+
+# // Original code
+# FUN_8008cf88(auStack104,"%dhp",((int)*(short *)(&DAT_801da528 + iVar4) * 1000) / 1014);
+
+# // Patched code
+# FUN_8008cf88(auStack104,"%dhp",(int)*(short *)(&DAT_801da528 + iVar4));
+
+# Old patch
+# g 3D984       # 0x3D92C US 1.2
+# w 40 00 46 86 # subu a2,v0,a2 -> lh a2,0x40(s2) // Load the PS value into a2 instead of the calculation result
+
+# Patch
+g 3D880       # Jump close to optimise pattern finding speed
+p 50 20 03 3C 21 80 11 02 # 0x3D934 PAL / 0x3D8DC US 1.2
+z 04          # Remove the setup of the constant for the calculation
+m 0C          # Retain the loading of the PS value into v0
+w 21 18 02 00 # move v1,v0 // Move the PS value into v1 as v0 gets reused later, v1 is safe as it is normally used for the constant
+z 18          # Remove the calculation
+m 14          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 30 03 00 # move a2,v1 // Move the stored PS value into a2 instead of the calculation result
+
+
+
+# Car setup screen - power restriction text in GT Mode events
+# Other power display on this screen has no unit conversion to begin with
+
+# // Original code
+# FUN_8008cf88(auStack200,"Power Restricted to %dhp",(EventPowerRestriction * 1000) / 1014);
+
+# // Patched code
+# FUN_8008cf88(auStack200,"Power Restricted to %dhp",EventPowerRestriction);
+
+# Old patch
+# g 44628       # 0x445F0 US 1.2
+# w 21 30 03 00 # subu a2,v0,a2 -> move a2,v1 // Assign the PS value to a2 instead of the calculation result
+
+# Patch
+g 44580       # Jump close to optimise pattern finding speed
+p 50 20 02 3C F9 C9 42 34 # At 0x445E8 PAL / 0x445B0 US 1.2
+z 20          # Remove the setup of the constant and the calculation - the PS value is already in v1 before this
+m 10          # Retain the setup of a0 and a1
+z 0C          # Remove the rest of the calculation
+m 04          # Preserve the function call itself
+w 21 30 03 00 # move a2,v1 // Move the stored PS value into a2 instead of the calculation result
