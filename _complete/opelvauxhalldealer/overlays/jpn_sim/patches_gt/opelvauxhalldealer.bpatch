@@ -1,3 +1,4 @@
 # Patch the total event count used for completion percentage calculations
-g 9BC8
-w E5   # 227 -> 229 events
+g 9B80 # Jump close to optimise pattern finding speed
+p ?? FF 63 24 1A 00 43 00 # 0x9BC8 JP 1.1 / 0x9DCC US 1.2 / 0x9E14 PAL - The only instruction that has the event count as an operand, and the one following to make it unique
+a 02   # Increment the operand by 2 to include the two new events available
