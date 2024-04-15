@@ -1,17 +1,11 @@
 # Patch out the hardcoded car IDs that are prevented from entering the wheel shop by replacing them with fake IDs
-g 12A48
-w 2D 2D 2D 2D 31 # gb0cn -> ----1
-m 3
-w 2D 2D 2D 2D 32 # gbc3n -> ----2
-m 3
-w 2D 2D 2D 2D 33 # gbc8n -> ----3
-m 3
-w 2D 2D 2D 2D 34 # gb28n -> ----4
-m 3
-w 2D 2D 2D 2D 35 # gb2cn -> ----5
-m 3
-w 2D 2D 2D 2D 36 # gb52n -> ----6
-m 3
-w 2D 2D 2D 2D 37 # gb74n -> ----7
-m 3
-w 2D 2D 2D 2D 38 # gb84n -> ----8
+g 12A00                   # Jump close to optimise pattern finding speed
+p 67 62 30 63 6E 00 00 00 # 0x12A48 JP 1.1 / 0x12E24 US 1.2 / 0x12D90 PAL - List of blocked cars (first entry, 'gb0cn')
+w 2D 2D 2D 2D 31 00 00 00 # gb0cn -> ----1
+w 2D 2D 2D 2D 32 00 00 00 # gbc3n -> ----2
+w 2D 2D 2D 2D 33 00 00 00 # gbc8n -> ----3
+w 2D 2D 2D 2D 34 00 00 00 # gb28n -> ----4
+w 2D 2D 2D 2D 35 00 00 00 # gb2cn -> ----5
+w 2D 2D 2D 2D 36 00 00 00 # gb52n -> ----6
+w 2D 2D 2D 2D 37 00 00 00 # gb74n -> ----7
+w 2D 2D 2D 2D 38 00 00 00 # gb84n -> ----8
