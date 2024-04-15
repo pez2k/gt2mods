@@ -1,3 +1,4 @@
 # Patch the correct Apricot Hill track ID into the list used for random track selection
-g 13007
-w 6D 61 53 00 # new_paramaS -> new_parmaS
+g 12B00                               # Jump close to optimise pattern finding speed
+p 6E 65 77 5F 70 61 72 61 6D 61 53 00 # 0x12B6C JP 1.1 / 0x13000 US 1.2 / 0x12F6C PAL - The incorrect ID: 'new_paramaS'
+w 6E 65 77 5F 70 61 72 6D 61 53 00 00 # new_paramaS -> new_parmaS
