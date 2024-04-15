@@ -1,9 +1,12 @@
 # Patch the hardcoded car list in Arcade mode to replace the Clio V6 with the Esprit Sport 350
-g 171BC    # Arcade car ID string array
+g 16C80    # Jump close to optimise pattern finding speed
+p 6C 64 76 61 6E 00 00 00 # 0x16C94 JP / 0x171BC US 1.1 / 0x170E0 PAL - Arcade car ID string array (first entry, 'ldvan')
 m 20       # Move to fifth car (8 * 4)
 w 69 6F 65 # frcsn -> ioesn
 
-g 41BFC    # Arcade car list structure start
+# Patch the displayed car stats
+g 3F680 # Jump close to optimise pattern finding speed
+p 0A 00 08 00 09 00 09 00 04 00 04 00 18 00 00 00 # 0x3F6F0 JP / 0x41BFC US 1.1 / 0x41B20 PAL - Arcade car list structure start (car counts per class)
 
 m 10       # Move to class S struct
 m 54       # Move to manufacturer logos for class S

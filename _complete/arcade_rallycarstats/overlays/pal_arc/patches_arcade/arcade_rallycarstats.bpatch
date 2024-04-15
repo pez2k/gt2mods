@@ -1,6 +1,6 @@
 # Patch the hardcoded rally car stats in Arcade mode to reflect the actual performance
-g 41B20 # Arcade car list structure start
-
+g 3F680 # Jump close to optimise pattern finding speed
+p 0A 00 08 00 09 00 09 00 04 00 04 00 18 00 00 00 # 0x3F6F0 JP / 0x41BFC US 1.1 / 0x41B20 PAL - Arcade car list structure start (car counts per class)
 m 10    # Move to class S struct
 m EC    # Move to class A struct
 m B0    # Move to class B struct
