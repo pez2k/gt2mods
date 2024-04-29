@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","SteeringReaction1","WheelSize","SteeringReaction2","TireCompound","TireForceVolMaybe","SlipMultiplier","GripMultiplier"
+"dvorn","13000","Medium","0","TireSize\1910_285-35R18.csv","0","TireCompound\06_MediumFront.dat","0","0","0"
