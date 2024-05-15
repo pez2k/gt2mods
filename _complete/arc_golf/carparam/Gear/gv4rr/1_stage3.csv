@@ -1,2 +1,0 @@
-﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
-"gv4rr","10500","3","5","-1","-1","-1","-1","-1","-1","-1","-1","3680","5500","2500","1","22","18","42"
