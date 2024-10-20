@@ -1,0 +1,2 @@
+﻿"CarId","Price","Stage","NumberOfGears","ReverseGearRatio","FirstGearRatio","SecondGearRatio","ThirdGearRatio","FourthGearRatio","FifthGearRatio","SixthGearRatio","SeventhGearRatio","DefaultFinalDriveRatio","MaxFinalDriveRatio","MinFinalDriveRatio","AllowIndividualRatioAdjustments","DefaultAutoSetting","MinAutoSetting","MaxAutoSetting"
+"a222n","0","0","5","3542","3674","2217","1432","1000","825","-1","-1","3909","3909","3909","0","255","255","255"
